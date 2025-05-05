@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: master
 
       # Set up JDK 17 for Android builds
       - name: Set up JDK 17
