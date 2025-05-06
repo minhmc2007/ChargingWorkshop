@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:title="关于"
+        android:title="About"
         app:iconSpaceReserved="false">
         <Preference
             android:key="version"
-            android:title="版本"
+            android:title="Version"
             app:iconSpaceReserved="false" />
         <Preference
-            android:summary="免费娱乐软件，仅供学习交流"
-            android:title="声明"
+            android:summary="Free entertainment software, for learning and communication purposes only"
+            android:title="Statement"
             app:iconSpaceReserved="false" />
         <Preference
-            android:summary="B站/酷安@Ryens 点击跳转关注"
-            android:title="开发者"
+            android:summary="Bilibili/Coolapk @Ryens Click to follow"
+            android:title="Developer"
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/b_url" />
         </Preference>
         <Preference
-            android:summary="点击跳转Github"
-            android:title="开源代码"
+            android:summary="Click to jump to Github"
+            android:title="Open Source Code"
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -31,77 +31,77 @@
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory
-        android:title="充电相关"
+        android:title="Charging Related"
         app:iconSpaceReserved="false">
         <Preference
             android:key="video"
-            android:title="充电动画路径"
+            android:title="Charging Animation Path"
             app:iconSpaceReserved="false" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_service"
             android:persistent="false"
-            android:summary="开启后插入充电器充电时会显示充电动画"
-            android:title="充电守护"
+            android:summary="When enabled, the charging animation will be displayed when the charger is plugged in"
+            android:title="Charging Guardian"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/charge_foreground_service"
-            android:summary="建议开启，不然服务在后台容易被系统杀死，缺点是会持续显示一个通知"
-            android:title="设置为前台服务"
+            android:summary="Recommended to enable, otherwise the service is easily killed by the system in the background, the disadvantage is that it will continuously display a notification"
+            android:title="Set as Foreground Service"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:dependency="@string/charge_service"
             android:key="@string/charge_screen_on_open"
-            android:summary="锁屏状态下亮屏显示动画，有效拯救你的插口"
-            android:title="亮屏守护"
+            android:summary="Display the animation on screen when locked, effectively saving your charging port"
+            android:title="Screen-on Guardian"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:dependency="@string/charge_service"
             android:key="@string/charge_keep_show"
-            android:summary="开启后充电动画会保持常亮"
-            android:title="守护常亮"
+            android:summary="When enabled, the charging animation will stay on"
+            android:title="Guardian Always On"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:dependency="@string/charge_service"
             android:key="@string/charge_click_close"
-            android:summary="显示充电动画时点击即关闭显示"
-            android:title="触摸关闭"
+            android:summary="Tap to close the display when the charging animation is shown"
+            android:title="Touch to close"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/is_not_open_on_full"
-            android:summary="当手机全屏时插入充电器不弹出动画"
-            android:title="勿扰模式"
+            android:summary="Do not pop up the animation when plugging in the charger while the phone is in full screen"
+            android:title="Do Not Disturb Mode"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_boot_start"
-            android:summary="开机时自动启动充电守护服务，请注意授予自启权限"
-            android:title="开机自启动"
+            android:summary="Automatically start the charging guardian service on boot, please make sure to grant auto-start permission"
+            android:title="Boot Start"
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 
     <com.su.charging.view.preference.HelpPreferenceCategory
         android:key="@string/charge_sounds"
-        android:title="音频设置"
+        android:title="Audio Settings"
         app:iconSpaceReserved="false">
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_is_audio"
-            android:summary="小心!!!这可能会导致你社死，请谨慎使用"
-            android:title="充电守护语音"
+            android:summary="Caution!!! This may cause you social embarrassment, please use with caution"
+            android:title="Charging Guardian Voice"
             app:iconSpaceReserved="false" />
 
         <PreferenceCategory
@@ -113,12 +113,12 @@
 
             <Preference
                 android:key="audio"
-                android:title="音频路径"
+                android:title="Audio Path"
                 app:iconSpaceReserved="false" />
             <Preference
                 android:icon="@drawable/ic_baseline_warning_24"
                 android:key="clear_audio_flags"
-                android:title="清空音频配置"
+                android:title="Clear Audio Configuration"
                 app:iconSpaceReserved="false" />
 
         </PreferenceCategory>
@@ -126,13 +126,13 @@
     </com.su.charging.view.preference.HelpPreferenceCategory>
 
     <PreferenceCategory
-        android:title="其他"
+        android:title="Other"
         app:iconSpaceReserved="false">
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/is_clear_recent"
-            android:summary="开启后后台将不显示图标，体验更加沉浸"
-            android:title="隐藏最近任务"
+            android:summary="When enabled, the icon will not be displayed in the background, providing a more immersive experience"
+            android:title="Hide Recent Tasks"
             app:iconSpaceReserved="false" />
     </PreferenceCategory>
 
