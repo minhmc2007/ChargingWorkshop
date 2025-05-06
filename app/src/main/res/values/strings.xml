@@ -16,7 +16,7 @@
     <string name="audio_flags">audio_flags</string>
     <string name="b_url">https://space.bilibili.com/12845795</string>
     <string name="github_url">https://github.com/RyensX/ChargingWorkshop</string>
-    <string name="start_use_text">Start using</string>
+    <string name="start_use_text">Start Using</string>
     <string name="sound_list">Audio List</string>
 
     <string name="video_res_path_format">
@@ -29,19 +29,19 @@
     </string>
 
     <string name="audio_setting_help">
-        Currently, audio playback is supported in five states:\n
+        Currently, audio supports playback in five states:\n
         They are:\n
         1. Low Battery: 0-20% battery\n
         2. Medium Battery: 21-70% battery\n
         3. High Battery: 71-99% battery\n
-        4. Full: 100% (Audio will keep playing after being fully charged, I guess nobody wants to keep it plugged in after it's full?)\n
+        4. Fully Charged: 100% (audio will keep playing when fully charged, but probably no one wants to keep it plugged in after it\'s full, right?)\n
         5. Unplugged\n
         Other tips:\n
-        1. Clicking on an audio will pop up a corresponding menu, allowing you to add Flags for different states so that it can be played in different states.\n
-        2. An audio supports setting multiple Flags, and if a state has multiple audios, one will be randomly selected to play.\n
-        3. If a Flag already exists, setting it again will clear that Flag.\n
+        1. Clicking on an audio file will open a menu where you can add flags for different states to play the audio in those states.\n
+        2. An audio file can have multiple flags, and if there are multiple audios for a state, one will be randomly selected to play.\n
+        3. If a flag is already set, setting it again will remove that flag.\n
     </string>
     <string name="per_desc">
-        The permissions that need to be granted manually above are represented differently on different systems. If you find that the application cannot display outside of the app or on the lock screen during operation, it is likely that there are special permission restrictions on the system, and you need to find the corresponding permission and grant it yourself.
+        The permissions that need to be manually granted may be represented differently on various systems. If you find that the app cannot display outside the app or on the lock screen during operation, it is likely due to special permission restrictions on the system. You will need to find and grant the corresponding permissions yourself.
     </string>
 </resources>
