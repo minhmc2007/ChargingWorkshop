@@ -22,7 +22,7 @@
                 android:data="@string/b_url" />
         </Preference>
         <Preference
-            android:summary="GitHub @YunyiKovsha"
+            android:summary="GitHub @Minhmc2007"
             android:title="Source code"
             app:iconSpaceReserved="false">
             <intent
