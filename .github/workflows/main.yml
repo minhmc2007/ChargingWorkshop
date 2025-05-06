@@ -1,4 +1,4 @@
-name: Build App
+Name: Build App
 
 on:
   workflow_dispatch:
@@ -49,4 +49,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Azusa-APK
-          path: build/outputs/apk/debug/*.apk
+          # Corrected path to include the 'app/' directory
+          path: app/build/outputs/apk/debug/*.apk
+
