@@ -24,7 +24,7 @@ class SettingsFragmentCompat : PreferenceFragmentCompat(), Preference.OnPreferen
 
     companion object {
         var isEnableAudio = false
-        var isClickClose = true
+        var isClickClose = false
         var isOpenOnClock = false
         var isKeepShow = false
         var isNotOpenOnFull = true
@@ -96,14 +96,14 @@ class SettingsFragmentCompat : PreferenceFragmentCompat(), Preference.OnPreferen
                         { isChecked = ChargingService.isOpen }) {
                         runCatching {
                             if (!Charging.normalChargingVideo.exists() || !Charging.quickChargingVideo.exists())
-                                throw RuntimeException("未添加动画文件，请根据路径放入动画文件")
+                                throw RuntimeException("The animation files have not been added. Please place the animation files in the specified path")
 
                             val intent = Intent(App.globalContext, ChargingService::class.java)
                             if (isChecked) {
                                 if (ChargeAudioManager.INS.checkIsEmptyAudio() || !isEnableAudio)
                                     Toast.makeText(
                                         App.globalContext,
-                                        "服务已启动，但未开启语音或尚未设置音频(拉到下方设置)，因此无论什么状态都不会发声。",
+                                        "The services have been started, but the voices are not enabled or the audios have not been set (pull down to configure them), so no sounds will be heard regardless of the status",
                                         Toast.LENGTH_LONG
                                     ).show()
                                 requireActivity().startService(intent)
@@ -122,7 +122,7 @@ class SettingsFragmentCompat : PreferenceFragmentCompat(), Preference.OnPreferen
                         { isEnableAudio = isChecked }) {
                         runCatching {
                             if (!Charging.audioResPath.exists())
-                                throw RuntimeException("未添加音频文件，请根据路径放入音频文件")
+                                throw RuntimeException("The audio files have not been added. Please place the audio files in the specified path")
                             isEnableAudio = isChecked
                         }.onFailure {
                             isChecked = false
@@ -132,6 +132,10 @@ class SettingsFragmentCompat : PreferenceFragmentCompat(), Preference.OnPreferen
                     //亮屏守护
                     PreInit(R.string.charge_screen_on_open, { isOpenOnClock = isChecked }) {
                         isOpenOnClock = isChecked
+                    },
+                    //Tap to close FIXED
+                    PreInit(R.string.charge_click_close, { isClickClose = isChecked }) {
+                        isClickClose = isChecked
                     },
                     //守护常亮
                     PreInit(
@@ -233,11 +237,11 @@ class SettingsFragmentCompat : PreferenceFragmentCompat(), Preference.OnPreferen
     private val chooseDialog by lazy {
         val items =
             arrayOf(
-                "播放",
-                *SoundPreference.AudioFlag.values().map { "设置为\"${it.flag}\"音频" }.toTypedArray()
+                "Play",
+                *SoundPreference.AudioFlag.values().map { "Set to \"${it.flag}\" audio" }.toTypedArray()
             )
         val listDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-        listDialog.setTitle("操作")
+        listDialog.setTitle("Options")
         listDialog.setItems(
             items
         ) { _, which ->

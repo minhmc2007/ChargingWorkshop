@@ -44,9 +44,9 @@ class PermissionBottomSheetFragment(@BottomSheetBehavior.State val bottomSheetSt
     }
 
     private val permissions = mapOf(
-        "2. 锁屏显示权限" to "用于提供锁屏显示动画支持",
-        "3. 后台显示权限" to "用于提供在非当前APP和锁屏界面显示动画支持",
-        "4. 推荐设置" to "锁定后台+关闭电池优化，防止被系统杀死"
+        "2. Display over lock screen" to "Used to enable lock screen display animation support",
+        "3. Draw over other apps" to "Used to enable animation support for non-current apps and the lock screen interface",
+        "4. Recommended settings" to "Lock background and disable battery optimization to prevent the system from terminating the app"
     )
 
     override fun onCreateView(
@@ -74,7 +74,7 @@ class PermissionBottomSheetFragment(@BottomSheetBehavior.State val bottomSheetSt
                 if (!PermissionUtils.INS.checkWindowPermission(requireContext()))
                     PermissionUtils.INS.requestWindowPermission(this@PermissionBottomSheetFragment)
                 else {
-                    Toast.makeText(requireContext(), "已授予该权限", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Permission granted successful", Toast.LENGTH_LONG).show()
                     syncPermissionStatus()
                 }
             }
@@ -120,7 +120,7 @@ class PermissionBottomSheetFragment(@BottomSheetBehavior.State val bottomSheetSt
                     .collect {
                         perStartUse.apply {
                             isEnabled = false
-                            text = "$ts($it)"
+                            text = "$ts ($it)"
                         }
                         delay(1000)
                     }

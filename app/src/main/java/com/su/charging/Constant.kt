@@ -11,9 +11,9 @@ object Charging {
             mkdirs()
     }
 
-    val normalChargingVideo = File(videoResPath, "normal_charging.mp4")
+    val normalChargingVideo = File(videoResPath, "normal_charging.mp4") // ≤ 20% battery
 
-    val quickChargingVideo = File(videoResPath, "quick_charging.mp4")
+    val quickChargingVideo = File(videoResPath, "quick_charging.mp4") // > 20% battery
 
     val audioResPath: File = File(resPath, "audio").apply {
         if (!exists())

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Charging workshop</string>
+    <string name="app_name">Charging Workshop</string>
     <string name="charge_task">charge_task</string>
     <string name="charge_service">charge_service</string>
     <string name="charge_foreground_service">charge_foreground_service</string>
@@ -15,33 +15,34 @@
 
     <string name="audio_flags">audio_flags</string>
     <string name="b_url">https://space.bilibili.com/12845795</string>
-    <string name="github_url">https://github.com/RyensX/ChargingWorkshop</string>
-    <string name="start_use_text">Start Using</string>
-    <string name="sound_list">Audio List</string>
+    <string name="github_url">https://github.com/YunyiKovsha/chargingworkshop-vi</string>
+    <string name="start_use_text">GET STARTED</string>
+    <string name="sound_list">"Audio list "</string>
 
     <string name="video_res_path_format">
         \n
-        Normal Charging:\n
+        Normal charging:\n
         %s
         \n
-        Fast Charging:\n
+        Quick charging:\n
         %s
     </string>
 
     <string name="audio_setting_help">
-        Currently, audio supports playback in five states:\n
-        They are:\n
-        1. Low Battery: 0-20% battery\n
-        2. Medium Battery: 21-70% battery\n
-        3. High Battery: 71-99% battery\n
-        4. Fully Charged: 100% (audio will keep playing when fully charged, but probably no one wants to keep it plugged in after it\'s full, right?)\n
-        5. Unplugged\n
+        Currently, audio can be played in five stages of charging.\n
+        Those stages are:\n
+        1. Low Battery: 0-20%\n
+        2. Medium Battery: 21-70%\n
+        3. High Battery: 71-99%\n
+        4. Full: 100% (Voice will be played continuously after fully charged. No one would want to keep it plugged in after it is fully charged, right?)\n
+        5. Unplug\n
+        \n
         Other tips:\n
-        1. Clicking on an audio file will open a menu where you can add flags for different states to play the audio in those states.\n
-        2. An audio file can have multiple flags, and if there are multiple audios for a state, one will be randomly selected to play.\n
-        3. If a flag is already set, setting it again will remove that flag.\n
+        1. Click on the audio to open the corresponding menu. Adding different state Flags will allow it to play in different states.\n
+        2. An audio can support multiple Flags. If there are multiple audios in one state, one will be randomly selected for playback.\n
+        3. If the same Flag is set again while it is already applied to the audio, the Flag will be cleared.\n
     </string>
     <string name="per_desc">
-        The permissions that need to be manually granted may be represented differently on various systems. If you find that the app cannot display outside the app or on the lock screen during operation, it is likely due to special permission restrictions on the system. You will need to find and grant the corresponding permissions yourself.
+        The permissions that need to be granted vary across different systems. If the application is not displayed on the non-application or lock screen during operation, it is likely due to special permission restrictions on the system. You will need to locate and grant the necessary permissions manually.
     </string>
 </resources>

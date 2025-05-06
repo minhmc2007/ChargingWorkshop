@@ -17,7 +17,7 @@ import com.su.charging.view.fragment.SettingsFragmentCompat
 class ChargingService : Service() {
 
     companion object {
-        const val CHANNEL_NAME = "充电守护服务"
+        const val CHANNEL_NAME = "Charging Guardian Service"
         const val CHANNEL_ID = "CHANNEL_ID"
         var isOpen = false
     }

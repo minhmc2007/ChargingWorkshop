@@ -10,20 +10,20 @@
             android:title="Version"
             app:iconSpaceReserved="false" />
         <Preference
-            android:summary="Free entertainment software, for learning and communication purposes only"
-            android:title="Statement"
+            android:summary="This app is provided free of charge and is intended solely for entertainment, educational, and communication purposes"
+            android:title="Intended use notice"
             app:iconSpaceReserved="false" />
         <Preference
-            android:summary="Bilibili/Coolapk @Ryens Click to follow"
-            android:title="Developer"
+            android:summary="bilibili/coolapk @Ryens"
+            android:title="Original developer"
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/b_url" />
         </Preference>
         <Preference
-            android:summary="Click to jump to Github"
-            android:title="Open Source Code"
+            android:summary="GitHub @YunyiKovsha"
+            android:title="Source code"
             app:iconSpaceReserved="false">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -31,77 +31,77 @@
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory
-        android:title="Charging Related"
+        android:title="Charging"
         app:iconSpaceReserved="false">
         <Preference
             android:key="video"
-            android:title="Charging Animation Path"
+            android:title="Animation path"
             app:iconSpaceReserved="false" />
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_service"
             android:persistent="false"
-            android:summary="When enabled, the charging animation will be displayed when the charger is plugged in"
+            android:summary="When turned on, the charging animation will appear when the charger is plugged in"
             android:title="Charging Guardian"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/charge_foreground_service"
-            android:summary="Recommended to enable, otherwise the service is easily killed by the system in the background, the disadvantage is that it will continuously display a notification"
-            android:title="Set as Foreground Service"
+            android:summary="It is recommended to keep it on; otherwise, the service may be terminated by the system in the background. The inconvenience is that a notification will remain visible at all times"
+            android:title="Set as foreground service"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:dependency="@string/charge_service"
             android:key="@string/charge_screen_on_open"
-            android:summary="Display the animation on screen when locked, effectively saving your charging port"
-            android:title="Screen-on Guardian"
+            android:summary="The animation will appear every time the screen is on (while charging), save your charging port from suffering"
+            android:title="Screen-on animation"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:dependency="@string/charge_service"
             android:key="@string/charge_keep_show"
-            android:summary="When enabled, the charging animation will stay on"
-            android:title="Guardian Always On"
+            android:summary="After being turned on, the charging animation will remain visible, and keep the screen awake"
+            android:title="Always on display"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="@string/charge_service"
             android:key="@string/charge_click_close"
-            android:summary="Tap to close the display when the charging animation is shown"
-            android:title="Touch to close"
+            android:summary="On: The charging animation will disappear before going to the unlock screen\nOff: The charging animation will remain visible through the unlock screen (recommended)\nNote: Required Android 8.0 or later to redirect to the unlock screen"
+            android:title="Unlock Style"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/is_not_open_on_full"
-            android:summary="Do not pop up the animation when plugging in the charger while the phone is in full screen"
-            android:title="Do Not Disturb Mode"
+            android:summary="When the phone is in full-screen mode and connected to a charger, the animation will not appear"
+            android:title="Do not disturb"
             app:iconSpaceReserved="false" />
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_boot_start"
-            android:summary="Automatically start the charging guardian service on boot, please make sure to grant auto-start permission"
-            android:title="Boot Start"
+            android:summary="Automatically start the Charging Guardian service when the phone boots up. Please ensure that the autostart permission is granted"
+            android:title="Auto startup"
             app:iconSpaceReserved="false" />
 
     </PreferenceCategory>
 
     <com.su.charging.view.preference.HelpPreferenceCategory
         android:key="@string/charge_sounds"
-        android:title="Audio Settings"
+        android:title="Audio"
         app:iconSpaceReserved="false">
 
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/charge_is_audio"
-            android:summary="Caution!!! This may cause you social embarrassment, please use with caution"
-            android:title="Charging Guardian Voice"
+            android:summary="Be cautious! This might lead to a publicly awkward moment. Use with care!"
+            android:title="Charging Guardian voice"
             app:iconSpaceReserved="false" />
 
         <PreferenceCategory
@@ -113,12 +113,12 @@
 
             <Preference
                 android:key="audio"
-                android:title="Audio Path"
+                android:title="Audio path"
                 app:iconSpaceReserved="false" />
             <Preference
                 android:icon="@drawable/ic_baseline_warning_24"
                 android:key="clear_audio_flags"
-                android:title="Clear Audio Configuration"
+                android:title="Clear audio configuration"
                 app:iconSpaceReserved="false" />
 
         </PreferenceCategory>
@@ -131,8 +131,8 @@
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/is_clear_recent"
-            android:summary="When enabled, the icon will not be displayed in the background, providing a more immersive experience"
-            android:title="Hide Recent Tasks"
+            android:summary="When enabled, this app will be hidden from the recent apps view, providing a more immersive experience"
+            android:title="Hide from recent apps"
             app:iconSpaceReserved="false" />
     </PreferenceCategory>
 

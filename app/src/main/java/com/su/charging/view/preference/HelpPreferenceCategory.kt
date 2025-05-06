@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceViewHolder
 import com.su.charging.R
+import com.su.charging.R.string.audio_setting_help
 
 class HelpPreferenceCategory(context: Context, attributes: AttributeSet) :
     PreferenceCategory(context, attributes), View.OnClickListener {
@@ -31,9 +32,9 @@ class HelpPreferenceCategory(context: Context, attributes: AttributeSet) :
 
     override fun onClick(v: View?) {
         AlertDialog.Builder(context, R.style.AlertDialog_AppCompat_Help)
-            .setTitle("音频设置帮助")
-            .setMessage(R.string.audio_setting_help)
-            .setPositiveButton("我知道了", null)
+            .setTitle("Audio setup guide")
+            .setMessage(audio_setting_help)
+            .setPositiveButton("GOT IT", null)
             .create()
             .show()
     }

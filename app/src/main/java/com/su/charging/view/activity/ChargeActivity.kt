@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -36,8 +37,34 @@ class ChargeActivity : AppCompatActivity(), BatteryBroadCastReceiver.BatteryList
         setContentView(R.layout.activity_charge)
 
         findViewById<ConstraintLayout>(R.id.charge_top).setOnClickListener {
-            if (SettingsFragmentCompat.isClickClose)
-                onPowerDisconnected()
+            if (SettingsFragmentCompat.isClickClose) {
+                onPowerDisconnected() //finish()
+
+                //Required SDK 26 (Android 8 "Oreo")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                    unlockScreen() //Call password UI
+            } else {
+
+                //Required SDK 26 (Android 8 "Oreo")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    unlockScreen() //Call password UI
+
+                    val keyguardManager = getSystemService(KEYGUARD_SERVICE) as KeyguardManager
+
+                    if (keyguardManager.isKeyguardLocked) {
+                        // Register dismiss keyguard callback
+                        keyguardManager.requestDismissKeyguard(
+                            this,
+                            object : KeyguardManager.KeyguardDismissCallback() {
+                                // Dismissing Keyguard has succeeded and the device is now unlocked
+                                override fun onDismissSucceeded() {
+                                    onPowerDisconnected() //finish()
+                                }
+                            })
+                    } else
+                        onPowerDisconnected()
+                }
+            }
         }
 
         video = findViewById(R.id.video)
@@ -46,6 +73,17 @@ class ChargeActivity : AppCompatActivity(), BatteryBroadCastReceiver.BatteryList
         chargeData()
         setDimension()
         chargeConfig()
+    }
+
+    private fun unlockScreen() {
+        val keyguardManager = getSystemService(KEYGUARD_SERVICE) as KeyguardManager
+
+        if (keyguardManager.isKeyguardLocked) {
+            // If the screen is locked, ask the system to unlock it, need API 26
+            keyguardManager.requestDismissKeyguard(this, null)
+        } else {
+            // If not locked, do nothing or do whatever you want
+        }
     }
 
     private fun chargeData() {
@@ -62,7 +100,7 @@ class ChargeActivity : AppCompatActivity(), BatteryBroadCastReceiver.BatteryList
                 else
                     Charging.quickChargingVideo
             if (!path.exists()) {
-                Toast.makeText(this@ChargeActivity, "无可用充电动画", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ChargeActivity, "No charging animations available", Toast.LENGTH_SHORT).show()
                 return
             }
             setVideoPath(path.absolutePath)
