@@ -15,7 +15,7 @@
             android:id="@+id/per_hit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="权限申请"
+            android:text="Permission Request"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -26,10 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="退出"
+            android:text="Exit"
             android:textColor="@color/white" />
     </RelativeLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,7 +42,7 @@
             android:id="@+id/per_window_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="1. 悬浮窗权限"
+            android:text="1. Overlay Permission"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -57,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="应用上层显示，用于检测全屏和锁屏显示"
+            android:text="Display over other apps, used for full-screen and lock screen display"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/per_window_title"
             app:layout_constraintTop_toBottomOf="@id/per_window_title"
@@ -70,7 +69,7 @@
             android:layout_height="wrap_content"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="授权"
+            android:text="Grant"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
